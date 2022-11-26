@@ -67,21 +67,48 @@ document.onkeydown = function () {
 let infoButton = document.querySelector(".show-info");
 let infoContainer = document.querySelector(".chat-info");
 let infoVisible = false;
-if (window.innerWidth <= 768) {
-  if (!infoVisible) {
-    infoButton.addEventListener("click", () => {
+infoButton.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    if (!infoVisible) {
       infoContainer.style.right = 0;
       infoVisible = true;
-    });
-  }
-  document.addEventListener("click", function (event) {
-    if (
-      !infoContainer.contains(event.target) &&
-      infoVisible &&
-      !infoButton.contains(event.target)
-    ) {
-      infoVisible = false;
-      infoContainer.style.right = -400 + "px";
     }
-  });
-}
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (
+    !infoContainer.contains(event.target) &&
+    infoVisible &&
+    !infoButton.contains(event.target)
+  ) {
+    infoVisible = false;
+    infoContainer.style.right = -400 + "px";
+  }
+});
+
+let chatButton = document.querySelector(".contacts");
+let chatContainer = document.querySelector(".chat-menu");
+let chatVisible = false;
+chatButton.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    if (!chatVisible) {
+      chatContainer.style.left = 0;
+      chatVisible = true;
+    } else {
+      chatContainer.style.left = -400 + "px";
+      chatVisible = false;
+    }
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (
+    !chatContainer.contains(event.target) &&
+    chatVisible &&
+    !chatButton.contains(event.target)
+  ) {
+    chatVisible = false;
+    chatContainer.style.left = -400 + "px";
+  }
+});
