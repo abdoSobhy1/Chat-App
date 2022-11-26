@@ -95,9 +95,13 @@ chatButton.addEventListener("click", () => {
     if (!chatVisible) {
       chatContainer.style.left = 0;
       chatVisible = true;
+      document.querySelector(".fill").style.opacity = 1;
+      document.querySelector(".outline").style.opacity = 0;
     } else {
       chatContainer.style.left = -400 + "px";
       chatVisible = false;
+      document.querySelector(".fill").style.opacity = 0;
+      document.querySelector(".outline").style.opacity = 1;
     }
   }
 });
@@ -110,5 +114,7 @@ document.addEventListener("click", function (event) {
   ) {
     chatVisible = false;
     chatContainer.style.left = -400 + "px";
+    document.querySelector(".fill").style.opacity = 0;
+    document.querySelector(".outline").style.opacity = 1;
   }
 });
