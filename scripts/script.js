@@ -176,3 +176,19 @@ let randomMsg = function () {
   }, 30);
   msgContainer.scrollTop = msgContainer.scrollHeight - 200;
 };
+
+let darkToggle = document.querySelector(".dark");
+let darkmode = false;
+darkToggle.addEventListener("click", () => {
+  if (!darkmode) {
+    document.body.classList.add("dark");
+    darkmode = true;
+    document.querySelector(".dark-o").style.opacity = 0;
+    document.querySelector(".dark-f").style.opacity = 1;
+  } else {
+    document.body.classList.remove("dark");
+    darkmode = false;
+    document.querySelector(".dark-o").style.opacity = 1;
+    document.querySelector(".dark-f").style.opacity = 0;
+  }
+});

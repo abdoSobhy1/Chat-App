@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
 
 * {
+    transition: 0.3s;
     box-sizing: border-box;
 }
 
@@ -29,6 +30,23 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     background-image: linear-gradient(45deg, #A2D3E9, #ADDBD9);
+    --alt-color: #f4f7ff;
+    --main-color: white;
+    --white-text: white;
+    --text-main: #222a31;
+    --text-alt: #777;
+    --icon-bg: #f2f5ff;
+    --icon-color: #2b54a8;
+}
+
+body.dark {
+    background-image: linear-gradient(45deg, #2F2F41, #171B2C);
+    --alt-color: #161819;
+    --main-color: #1F2123;
+    --text-main: white;
+    --text-alt: #F3F3F9;
+    --icon-bg: #1A1C1E;
+    --icon-color: #F3F3F9;
 }
 
 ::-webkit-scrollbar {
@@ -101,16 +119,22 @@ body {
     margin-left: -4px;
 }
 
-.page .sidebar .buttons a.contacts {
+.page .sidebar .buttons a.contacts,
+.page .sidebar .buttons a.dark {
     position: relative;
+    height: 42px;
 }
 
-.page .sidebar .buttons a.contacts img {
+.page .sidebar .buttons a.contacts img,
+.page .sidebar .buttons a.dark img {
     position: absolute;
     transition: 0.3s;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.page .sidebar .buttons a.contacts img:last-of-type {
+.page .sidebar .buttons a.contacts img:last-of-type,
+.page .sidebar .buttons a.dark img:last-of-type {
     opacity: 0;
 }
 
@@ -129,7 +153,7 @@ body {
 
 .app .chats {
     flex: 1;
-    background-color: #F4F7FF;
+    background-color: var(--alt-color);
     padding: 20px;
     display: flex;
     gap: 20px;
@@ -137,7 +161,7 @@ body {
 
 .app .chat-info {
     width: 30%;
-    background-color: white;
+    background-color: var(--main-color);
     padding: 20px;
     overflow-y: hidden;
 }
@@ -146,7 +170,7 @@ body {
     border-radius: 40px;
     height: 100%;
     width: 40%;
-    background-color: white;
+    background-color: var(--main-color);
     padding: 20px;
     overflow: hidden;
     /* box-shadow: rgba(0, 0, 0, 0.2) 12px 0px 30px -16px; */
@@ -168,11 +192,11 @@ body {
     padding: 5px;
     aspect-ratio: 1;
     font-size: 18px;
-    color: #2b54a8;
+    color: var(--icon-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f2f5ff;
+    background-color: var(--icon-bg);
 }
 
 .app .chats .chat-menu .new-chat span {
@@ -194,7 +218,7 @@ body {
 
 .app .chats .chat-menu .title i {
     margin-inline: auto 10px;
-    color: #777;
+    color: var(--text-alt);
     font-size: 18px;
 }
 
@@ -204,12 +228,13 @@ body {
 }
 
 .app .chats .chat-menu .search input {
-    background-color: #f4f7ff;
+    background-color: var(--alt-color);
     border: none;
     border-radius: 30px;
     font-size: 14px;
     padding: 10px 15px;
     width: 100%;
+    color: var(--text-main);
 }
 
 .app .chats .chat-menu .search i {
@@ -218,6 +243,12 @@ body {
     right: 15px;
     color: #656f7a;
     transform: translateY(-50%);
+}
+
+.dark .app .chat-menu .new-chat span,
+.dark .app .chats .chat-menu .title span,
+.dark .app .chats .chat-menu .search i {
+    color: var(--text-main);
 }
 
 .app .chats .chat-menu .chats-container {
@@ -258,16 +289,18 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 15px;
-    color: #222a31;
+    color: var(--text-main);
+    position: relative;
+    z-index: 9999;
 }
 
 .app .chats .chat-menu .chat span:last-of-type {
     font-size: 14px;
-    color: #777;
+    color: var(--text-alt);
 }
 
 .app .chats .chat-menu .chat.active {
-    background-color: #F4F7FF;
+    background-color: var(--alt-color);
     width: calc(100% + 50px);
     padding: 10px 20px;
     position: relative;
@@ -283,13 +316,13 @@ body {
     content: '';
     position: absolute;
     border-radius: 40px;
-    background-color: white;
+    background-color: var(--main-color);
     width: 50px;
     height: 50px;
     right: 0;
     top: -72%;
     transform: translateX(-105%);
-    /* box-shadow: rgb(0 0 0 / 37%) 13px 12px 30px -16px, #F4F7FF 0 0 0; */
+    /* box-shadow: rgb(0 0 0 / 37%) 13px 12px 30px -16px, var(--alt-color) 0 0 0; */
     z-index: 119;
     pointer-events: none;
     transition: background 0.3s;
@@ -305,7 +338,7 @@ body {
     display: block;
     width: 21px;
     height: 30px;
-    background-color: #F4F7FF;
+    background-color: var(--alt-color);
     position: absolute;
     right: 0;
     top: 0;
@@ -339,7 +372,7 @@ body {
     width: 100%;
     height: 100%;
     bottom: -60%;
-    background-image: linear-gradient(to bottom, #f4f7ff 70%, transparent);
+    background-image: linear-gradient(to bottom, var(--alt-color) 70%, transparent);
     z-index: -1;
 }
 
@@ -369,16 +402,17 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 15px;
-    color: #222a31;
+    color: var(--text-main);
 }
 
 .app .chats .chat .chat-title .user .u-info span:last-of-type {
     font-size: 14px;
-    color: #777;
+    color: var(--text-alt);
 }
 
 .app .chats .chat .chat-title i {
     margin-inline: auto 10px;
+    color: var(--text-main);
 }
 
 .app .chats .chat .messages-container {
@@ -423,7 +457,7 @@ body {
 }
 
 .app .chats .chat .messages-container .message-sent .message {
-    color: white;
+    color: var(--white-text);
     background-color: #F36BAB;
     border-radius: 20px 20px 0;
     text-align: right;
@@ -438,8 +472,8 @@ body {
 }
 
 .app .chats .chat .messages-container .message-received .message {
-    color: black;
-    background-color: white;
+    color: var(--text-main);
+    background-color: var(--main-color);
     border-radius: 20px 20px 20px 0;
     text-align: left;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -469,7 +503,7 @@ body {
     height: 100%;
     top: -60%;
     left: 0;
-    background-image: linear-gradient(to top, #f4f7ff 70%, transparent);
+    background-image: linear-gradient(to top, var(--alt-color) 70%, transparent);
     z-index: -1;
 }
 
@@ -479,6 +513,8 @@ body {
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 50px;
+    background-color: var(--main-color);
+    color: var(--text-main);
 }
 
 .app .chats .chat .messages-input i {
@@ -495,11 +531,11 @@ body {
     padding: 5px;
     aspect-ratio: 1;
     font-size: 18px;
-    color: #2b54a8;
+    color: var(--icon-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f2f5ff;
+    background-color: var(--icon-bg);
 }
 
 .app .chats .chat .messages-input .plus {
@@ -517,6 +553,7 @@ body {
     align-items: center;
     justify-content: center;
     right: 50px;
+    color: var(--text-main);
 }
 
 .app .chats .chat .messages-input .send {
@@ -535,12 +572,12 @@ body {
 .chat-info .user-info .user-photo img {
     width: 100px;
     border-radius: 50%;
-    border: 5px solid white;
+    border: 5px solid var(--main-color);
     box-shadow: rgba(0, 0, 0, 0.5) 12px 0px 30px -7px;
 }
 
 .chat-info .user-info .name {
-    color: #222a31;
+    color: var(--text-main);
     font-weight: 600;
     margin-top: 5px;
 }
@@ -548,7 +585,7 @@ body {
 .chat-info .user-info .info {
     font-size: 13px;
     font-weight: bold;
-    color: #777;
+    color: var(--text-alt);
 }
 
 .chat-info .attachments {
@@ -590,7 +627,7 @@ body {
 
 .chat-info .accordion .title i {
     color: var(--icon-color);
-    background-color: white;
+    background-color: var(--main-color);
     border-radius: 50%;
     margin-right: 10px;
     width: 35px;
@@ -612,8 +649,8 @@ body {
 }
 
 .chat-info .accordion.active .content {
-    max-height: 230px;
-    border-top: 2px solid white;
+    max-height: 245px;
+    border-top: 2px solid var(--main-color);
     transition: 0.3s;
     padding-bottom: 15px;
 }
@@ -626,7 +663,7 @@ body {
 }
 
 .chat-info .content span img:first-of-type {
-    background-color: white;
+    background-color: var(--main-color);
     border-radius: 50%;
     margin-right: 10px;
     width: 40px;
