@@ -118,7 +118,7 @@ body {
 }
 
 .app .chat-info {
-    width: 26%;
+    width: 30%;
     background-color: white;
     padding: 20px;
     overflow-y: hidden;
@@ -127,7 +127,7 @@ body {
 .app .chats .chat-menu {
     border-radius: 40px;
     height: 100%;
-    width: 33%;
+    width: 40%;
     background-color: white;
     padding: 20px;
     /* box-shadow: rgba(0, 0, 0, 0.2) 12px 0px 30px -16px; */
@@ -314,7 +314,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    bottom: -90%;
+    bottom: -60%;
     background-image: linear-gradient(to bottom, #f4f7ff 70%, transparent);
     z-index: -1;
 }
@@ -356,7 +356,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
     overflow-y: auto;
 }
 
@@ -368,7 +368,7 @@ body {
 }
 
 .app .chats .chat .messages-container>div:first-of-type {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .app .chats .chat .messages-container>div:last-of-type {
@@ -420,7 +420,9 @@ body {
 }
 
 .app .chats .chat .messages-container .message .time {
-    font-size: 14px;
+    font-size: 13px;
+    user-select: none;
+    opacity: 0.8;
 }
 
 .app .chats .chat .messages-input {
