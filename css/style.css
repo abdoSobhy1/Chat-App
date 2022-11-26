@@ -148,6 +148,7 @@ body {
     width: 40%;
     background-color: white;
     padding: 20px;
+    overflow: hidden;
     /* box-shadow: rgba(0, 0, 0, 0.2) 12px 0px 30px -16px; */
 }
 
@@ -219,8 +220,12 @@ body {
     transform: translateY(-50%);
 }
 
-.app .chats .chat-menu .chat:first-of-type {
-    margin-top: 30px;
+.app .chats .chat-menu .chats-container {
+    width: calc(100% + 50px);
+    transform: translateX(-20px);
+    overflow-y: auto;
+    margin-top: 10px;
+    height: calc(100% - 125px);
 }
 
 .app .chats .chat-menu .chat {
@@ -228,7 +233,6 @@ body {
     align-items: center;
     margin: 10px 0;
     padding: 10px 20px;
-    transform: translateX(-20px);
     border-left: 3px solid transparent;
     cursor: pointer;
     transition: 0.3s;
@@ -237,7 +241,9 @@ body {
 .app .chats .chat-menu .chat img {
     border-radius: 50%;
     width: 50px;
+    aspect-ratio: 1;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 .app .chats .chat-menu .chat .content {
@@ -350,6 +356,11 @@ body {
     margin-right: 10px;
 }
 
+.sndrImg {
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
 .app .chats .chat .chat-title .user .u-info .name {
     display: block;
     font-weight: 600;
@@ -423,6 +434,7 @@ body {
     flex-direction: row;
     align-items: flex-end;
     position: relative;
+    transition: 0.3s;
 }
 
 .app .chats .chat .messages-container .message-received .message {
@@ -541,8 +553,9 @@ body {
 
 .chat-info .attachments {
     width: 100%;
-    height: 80%;
+    height: 78%;
     overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .chat-info .accordion {
@@ -609,6 +622,7 @@ body {
     margin: 15px 20px 0px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .chat-info .content span img:first-of-type {
@@ -628,4 +642,9 @@ body {
     width: 15px;
     margin-left: auto;
     cursor: pointer;
+}
+
+.chat-info .content span a {
+    font-weight: bold;
+    color: #1e262c;
 }

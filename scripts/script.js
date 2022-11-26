@@ -13,6 +13,12 @@ chat.forEach((ele) => {
       i.classList.remove("active");
     });
     ele.classList.add("active");
+    let source = ele.children[2].src;
+    let sndr = document.querySelectorAll(".sndrImg");
+    console.log(sndr);
+    sndr.forEach((image) => {
+      image.src = source;
+    });
   });
 });
 
@@ -53,6 +59,9 @@ let sendMsg = function () {
   }, 30);
   document.getElementById("Message").value = "";
   msgContainer.scrollTop = msgContainer.scrollHeight - 200;
+  setTimeout(() => {
+    randomMsg();
+  }, Math.floor(Math.random() * 2) * 1000);
 };
 send.addEventListener("click", () => {
   sendMsg();
@@ -118,3 +127,46 @@ document.addEventListener("click", function (event) {
     document.querySelector(".outline").style.opacity = 1;
   }
 });
+let randomMessages = [
+  "Where's Messi?",
+  "Sub to my channel",
+  "follow me on twitter",
+  "Unban me",
+  "I will give you 10 millions",
+  "I'll add more messages later",
+];
+let randomMsg = function () {
+  let msgBox = document.createElement("div");
+  msgBox.classList.add("message-received");
+  let imgDiv = document.createElement("div");
+  imgDiv.classList.add("sender-img");
+  let sndrImg = document.createElement("img");
+  sndrImg.src = document.querySelector(".sndrImg").src;
+  sndrImg.classList.add("sndrImg");
+  imgDiv.appendChild(sndrImg);
+  msgBox.appendChild(imgDiv);
+  let msgParent = document.createElement("div");
+  msgParent.classList.add("message");
+  let msg = document.createElement("div");
+  msg.classList.add("text");
+
+  msg.innerHTML =
+    randomMessages[Math.floor(Math.random() * randomMessages.length)];
+  msgParent.appendChild(msg);
+  let time = document.createElement("div");
+  time.classList.add("time");
+  time.innerHTML = new Date().toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  msgParent.appendChild(time);
+  msgBox.appendChild(msgParent);
+  msgBox.classList.add("msg-transition");
+  let msgContainer = document.querySelector(".messages-container");
+  msgContainer.appendChild(msgBox);
+  setTimeout(() => {
+    msgBox.classList.remove("msg-transition");
+  }, 30);
+  msgContainer.scrollTop = msgContainer.scrollHeight - 200;
+};
