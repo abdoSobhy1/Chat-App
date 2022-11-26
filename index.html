@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="scripts/script.js" defer></script>
+    <title>Chat App</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/logo-white.png" alt="">
+            </div>
+            <div class="buttons">
+                <a href="#"><i class="fa-regular fa-file-lines"></i></a>
+                <a href="#"><i class="fa-regular fa-calendar-minus"></i></a>
+                <a href="#" class="active"><i class="fa-regular fa-message"></i></a>
+                <a href="#"><i class="fa-regular fa-bell notification"></i></a>
+                <a href="#"><i class="fa-solid fa-user-plus"></i></a>
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+        </div>
+        <div class="app">
+            <div class="chats">
+                <div class="chat-menu">
+                    <div class="new-chat">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Create New</span>
+                    </div>
+                    <div class="title">
+                        <span>Chat</span>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="search">
+                        <input type="search" placeholder="Search Name">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="chats-container">
+                        <div class="chat">
+                            <span class="round"></span>
+                            <span class="round"></span>
+                            <img src="images/mark.jpg" alt="">
+                            <div class="content">
+                                <span class="name">Mark Zukerberg</span>
+                                <span>30 mins ago</span>
+                            </div>
+                        </div>
+                        <div class="chat active">
+                            <span class="round"></span>
+                            <span class="round"></span>
+                            <img src="images/mark.jpg" alt="">
+                            <div class="content">
+                                <span class="name">Mark Zukerberg</span>
+                                <span>30 mins ago</span>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <span class="round"></span>
+                            <span class="round"></span>
+                            <img src="images/mark.jpg" alt="">
+                            <div class="content">
+                                <span class="name">Mark Zukerberg</span>
+                                <span>30 mins ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-title">
+                        <div class="user">
+                            <img src="images/mark.jpg" alt="">
+                            <div class="u-info">
+                                <span class="name">Mark Zukerberg</span>
+                                <span class="online">Online</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-ellipsis show-info"></i>
+                    </div>
+                    <div class="messages-container">
+                        <div class="message-sent">
+                            <div class="sender-img">
+                                <img src="images/pfp.jpg" alt="">
+                            </div>
+                            <div class="message">
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse,
+                                    facere!</div>
+                                <div class="time">4:05pm</div>
+                            </div>
+                        </div>
+                        <div class="message-received">
+                            <div class="sender-img">
+                                <img src="images/mark.jpg" alt="">
+                            </div>
+                            <div class="message">
+                                <div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse,
+                                    facere!</div>
+                                <div class="time">4:05pm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="messages-input">
+                        <i class="fa-solid fa-plus plus"></i>
+                        <input type="text" id="Message" placeholder="Type a messaage here...">
+                        <i class="fa-regular fa-face-smile emoji"></i>
+                        <i class="fa-regular fa-paper-plane send"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-info">
+                <div class="user-info">
+                    <div class="user-photo">
+                        <img src="images/pfp.jpg" alt="">
+                    </div>
+                    <span class="name">AbdelRahman Sobhy</span>
+                    <span class="info">Front-end Lead Engineer</span>
+                </div>
+                <div class="attachments">
+                    <div class="accordion starred-messages" style="--accordion-color:#fef5e6">
+                        <div class="title" style="--icon-color:#e2ba72"><i class="fa-regular fa-star"></i>Starred
+                            Messages</div>
+                        <div class="content">
+                            <span>Message 1</span>
+                            <span>Message 2</span>
+                            <span>Message 3</span>
+                        </div>
+                    </div>
+                    <div class="accordion media" style="--accordion-color:#feeff7">
+                        <div class="title" style="--icon-color:#d592b3"><i class="fa-regular fa-image"></i>Media
+                        </div>
+                        <div class="content">
+                            <span>Message 1</span>
+                            <span>Message 2</span>
+                            <span>Message 3</span>
+                        </div>
+                    </div>
+                    <div class="accordion files active" style="--accordion-color:#e9eef8">
+                        <div class="title" style="--icon-color:#516aa2"><i class="fa-regular    fa-file-lines"></i>Files
+                            &
+                            Docs
+                        </div>
+                        <div class="content">
+                            <span>
+                                <img src="images/pdf.svg" alt="">
+                                lecture.pdf
+                                <img src="images/download.png" alt="">
+                            </span>
+                            <span>
+                                <img src="images/psd.svg" alt="">
+                                final design.psd
+                                <img src="images/download.png" alt="">
+                            </span>
+                            <span>
+                                <img src="images/zip.svg" alt="">
+                                crack.zip
+                                <img src="images/download.png" alt="">
+                            </span>
+                            <span>
+                                <img src="images/png.svg" alt="">
+                                my-pfp.png
+                                <img src="images/download.png" alt="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="accordion info" style="--accordion-color:#ffebe9">
+                        <div class="title" style="--icon-color:#cb908a"><i
+                                class="fa-solid fa-triangle-exclamation"></i>Information
+                        </div>
+                        <div class="content">
+                            <span>Message 1</span>
+                            <span>Message 2</span>
+                            <span>Message 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
