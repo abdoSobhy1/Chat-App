@@ -288,7 +288,7 @@ body {
     height: 50px;
     right: 0;
     top: -72%;
-    transform: translateX(-20%);
+    transform: translateX(-105%);
     /* box-shadow: rgb(0 0 0 / 37%) 13px 12px 30px -16px, #F4F7FF 0 0 0; */
     z-index: 119;
     pointer-events: none;
@@ -309,7 +309,7 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(-262%) translateY(-100%);
     pointer-events: none;
     transition: background 0.3s;
 }
