@@ -62,6 +62,7 @@
 
     .page .sidebar .buttons a {
         width: 50px;
+        height: fit-content;
     }
 
     .page .sidebar .buttons a img {
