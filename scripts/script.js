@@ -15,10 +15,11 @@ chat.forEach((ele) => {
     ele.classList.add("active");
     let source = ele.children[2].src;
     let sndr = document.querySelectorAll(".sndrImg");
-    console.log(sndr);
     sndr.forEach((image) => {
       image.src = source;
     });
+    document.querySelector(".u-info .name").innerHTML =
+      ele.children[3].children[0].innerHTML;
   });
 });
 
