@@ -133,6 +133,11 @@ let randomMessages = [
   "follow me on twitter",
   "Unban me",
   "I will give you 10 millions",
+  "Thanks",
+  "let's go!",
+  "Amazing",
+  "Check my other designs",
+  "I'll buy you a coffee",
   "I'll add more messages later",
 ];
 let randomMsg = function () {
