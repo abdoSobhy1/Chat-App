@@ -433,7 +433,7 @@ body.dark {
 }
 
 .app .chats .chat .messages-container>div:first-of-type {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .app .chats .chat .messages-container>div:last-of-type {
